@@ -21,7 +21,9 @@ DISTFILES += qml/harbour-nextcloud-cookbook.qml \
     qml/components/StandardDialog.qml \
     qml/components/StandardLabel.qml \
     qml/components/StandardPage.qml \
+    qml/components/TaxonomyListItem.qml \
     qml/cover/CoverPage.qml \
+    qml/pages/CategoriesPage.qml \
     qml/pages/CheckPage.qml \
     qml/pages/LoginPage.qml \
     qml/pages/MainPage.qml \

@@ -146,5 +146,10 @@ StandardPage {
         onTriggered: refresh()
     }
 
-    Component.onCompleted: refresh()
+    Component.onCompleted: {
+        refresh();
+        safeCall(function() {
+            pageStack.pushAttached("CategoriesPage.qml");
+        });
+    }
 }

@@ -114,9 +114,35 @@
         <source>Import from URL</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="categories.title">
+        <location filename="../qml/pages/CategoriesPage.qml" line="12"/>
+        <source>Categories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="categories.loading">
+        <location filename="../qml/pages/CategoriesPage.qml" line="18"/>
+        <source>Loading categories...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="categories.uncategorized">
+        <location filename="../qml/pages/CategoriesPage.qml" line="25"/>
+        <source>Uncategorized</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="categories.error">
+        <location filename="../qml/pages/CategoriesPage.qml" line="38"/>
+        <source>Could not load categories. Pull down to refresh.</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message id="main.refresh">
+        <location filename="../qml/pages/CategoriesPage.qml" line="49"/>
         <location filename="../qml/pages/MainPage.qml" line="93"/>
         <source>Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="categories.empty">
+        <location filename="../qml/pages/CategoriesPage.qml" line="62"/>
+        <source>No categories</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="main.search_recipes">

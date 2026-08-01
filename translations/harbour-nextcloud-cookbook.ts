@@ -103,6 +103,26 @@
         <source>Share</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="categories.title">
+        <source>Categories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="categories.loading">
+        <source>Loading categories...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="categories.error">
+        <source>Could not load categories. Pull down to refresh.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="categories.empty">
+        <source>No categories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="categories.uncategorized">
+        <source>Uncategorized</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>
