@@ -63,9 +63,11 @@ StandardPage {
             width: page.width
             name: modelData.name || ""
             count: modelData.recipeCount || 0
-            iconSource: "image://theme/icon-m-tag"
+            iconSource: "image://theme/icon-m-levels"
 
-            onClicked: console.warn("Tag selection is not implemented yet")
+            onClicked: pageStack.push("TagDetailPage.qml", {
+                tagName: modelData.name || ""
+            })
         }
     }
 

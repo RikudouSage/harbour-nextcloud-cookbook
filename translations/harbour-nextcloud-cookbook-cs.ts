@@ -44,6 +44,7 @@
         <location filename="../qml/pages/CategoriesPage.qml" line="49"/>
         <location filename="../qml/pages/CategoryDetailPage.qml" line="102"/>
         <location filename="../qml/pages/MainPage.qml" line="146"/>
+        <location filename="../qml/pages/TagDetailPage.qml" line="60"/>
         <location filename="../qml/pages/TagsPage.qml" line="40"/>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
@@ -125,6 +126,7 @@
         <location filename="../qml/pages/CategoryDetailPage.qml" line="29"/>
         <location filename="../qml/pages/MainPage.qml" line="22"/>
         <location filename="../qml/pages/MainPage.qml" line="172"/>
+        <location filename="../qml/pages/TagDetailPage.qml" line="20"/>
         <source>Loading recipes...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -157,6 +159,7 @@
     <message id="main.recipes_error">
         <location filename="../qml/pages/CategoryDetailPage.qml" line="62"/>
         <location filename="../qml/pages/MainPage.qml" line="95"/>
+        <location filename="../qml/pages/TagDetailPage.qml" line="39"/>
         <source>Could not load recipes. Pull down to refresh.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -168,6 +171,7 @@
     <message id="main.delete_error">
         <location filename="../qml/pages/CategoryDetailPage.qml" line="72"/>
         <location filename="../qml/pages/MainPage.qml" line="117"/>
+        <location filename="../qml/pages/TagDetailPage.qml" line="49"/>
         <source>Could not delete recipe.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -184,6 +188,7 @@
     <message id="main.empty">
         <location filename="../qml/pages/CategoryDetailPage.qml" line="115"/>
         <location filename="../qml/pages/MainPage.qml" line="180"/>
+        <location filename="../qml/pages/TagDetailPage.qml" line="73"/>
         <source>No recipes</source>
         <translation type="unfinished"></translation>
     </message>

@@ -227,6 +227,11 @@ void Core::listKeywordRecipes(const QJsonArray &keywords)
     });
 }
 
+void Core::listKeywordRecipes(const QString &keyword)
+{
+    listKeywordRecipes(QJsonArray{keyword});
+}
+
 void Core::listCategories()
 {
     QtConcurrent::run([=] {

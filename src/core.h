@@ -24,6 +24,7 @@ public:
     Q_INVOKABLE void searchRecipes(const QString &query);
     Q_INVOKABLE void searchRecipes(const QString &context, const QString &query);
     Q_INVOKABLE void listCategoryRecipes(const QString &category);
+    Q_INVOKABLE void listKeywordRecipes(const QString &keyword);
     Q_INVOKABLE void listKeywordRecipes(const QJsonArray &keywords);
     Q_INVOKABLE void listCategories();
     Q_INVOKABLE void listKeywords();
