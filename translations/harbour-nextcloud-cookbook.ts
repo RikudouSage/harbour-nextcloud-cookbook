@@ -51,8 +51,56 @@
         <source>Recipes</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="main.loading_recipes">
+        <source>Loading recipes...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="main.recipes_error">
+        <source>Could not load recipes. Pull down to refresh.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="main.import_error">
+        <source>Could not import recipe.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="main.delete_error">
+        <source>Could not delete recipe.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="main.create_recipe">
+        <source>Create recipe</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="main.import_from_url">
+        <source>Import from URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="main.refresh">
+        <source>Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message id="main.logout">
         <source>Logout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="main.search_recipes">
+        <source>Search recipes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="main.empty">
+        <source>No recipes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_item.edit">
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_item.delete">
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_item.share">
+        <source>Share</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

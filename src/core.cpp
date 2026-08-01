@@ -1,11 +1,21 @@
 #include "core.h"
+#include <QDateTime>
+#include <QDir>
 #include <QDebug>
+#include <QFile>
+#include <QFileInfo>
+#include <QImageReader>
 #include <QMetaType>
+#include <QStandardPaths>
+#include <QStringList>
+#include <QUrl>
 
 #include <vector>
 #include <QtConcurrent>
 
 namespace {
+
+constexpr qint64 RecipeImageCacheTTLSeconds = 60 * 60;
 
 QString cString(const char *value)
 {
@@ -233,6 +243,69 @@ void Core::deleteRecipe(const QString &id)
     });
 }
 
+void Core::resolveRecipeImage(const QString &id)
+{
+    QtConcurrent::run([=] {
+        const auto cachedPath = cachedRecipeImagePath(id);
+        if (!cachedPath.isEmpty()) {
+            if (!isCachedRecipeImageValid(id, cachedPath)) {
+                QFile::remove(cachedPath);
+            } else {
+                emit recipeImageResolved(true, id, QUrl::fromLocalFile(cachedPath).toString());
+                return;
+            }
+        }
+
+        auto idData = id.toUtf8();
+        ByteSlice image = {};
+        if (CookbookGetRecipeImage(ctx, client, idData.data(), nullptr, &image) != CookbookSuccess) {
+            qWarning() << "Failed fetching recipe image:" << getLastError();
+            emit recipeImageResolved(false, id, {});
+            return;
+        }
+
+        QByteArray data(reinterpret_cast<const char *>(image.items), static_cast<int>(image.len));
+        CookbookFreeBytes(&image);
+
+        const auto extension = detectImageExtension(data);
+        if (extension.isEmpty()) {
+            qWarning() << "Could not detect image type for recipe" << id
+                       << "bytes" << data.size()
+                       << "prefix" << data.left(32).toHex();
+            emit recipeImageResolved(false, id, {});
+            return;
+        }
+
+        const auto path = recipeImageCachePath(id, extension);
+        QDir().mkpath(QFileInfo(path).absolutePath());
+
+        const auto tempPath = path + ".tmp";
+        QFile file(tempPath);
+        if (!file.open(QIODevice::WriteOnly) || file.write(data) != data.size()) {
+            qWarning() << "Failed caching recipe image:" << tempPath << file.errorString();
+            file.remove();
+            emit recipeImageResolved(false, id, {});
+            return;
+        }
+        file.close();
+
+        QFile::remove(path);
+        if (!QFile::rename(tempPath, path)) {
+            qWarning() << "Failed moving cached recipe image into place:" << path;
+            QFile::remove(tempPath);
+            emit recipeImageResolved(false, id, {});
+            return;
+        }
+
+        emit recipeImageResolved(true, id, QUrl::fromLocalFile(path).toString());
+    });
+}
+
+void Core::invalidateRecipeImage(const QString &id)
+{
+    removeCachedRecipeImages(id);
+}
+
 void Core::reinitialize()
 {
     QtConcurrent::run([=] {
@@ -275,6 +348,106 @@ QJsonArray Core::mapRecipes(const CookbookRecipeStubSlice &recipes) const
         result.append(mapRecipeStub(recipes.items[i]));
     }
     return result;
+}
+
+QString Core::cachedRecipeImagePath(const QString &id) const
+{
+    const QStringList extensions = {"png", "svg", "jpg", "webp", "gif"};
+    const auto oldestValid = QDateTime::currentDateTimeUtc().addSecs(-RecipeImageCacheTTLSeconds);
+
+    for (const auto &extension : extensions) {
+        const auto path = recipeImageCachePath(id, extension);
+        const QFileInfo fileInfo(path);
+        if (!fileInfo.exists()) {
+            continue;
+        }
+
+        if (fileInfo.lastModified().toUTC() >= oldestValid) {
+            return path;
+        }
+
+        QFile::remove(path);
+    }
+
+    return {};
+}
+
+void Core::removeCachedRecipeImages(const QString &id) const
+{
+    const QStringList extensions = {"png", "svg", "jpg", "webp", "gif"};
+    for (const auto &extension : extensions) {
+        QFile::remove(recipeImageCachePath(id, extension));
+        QFile::remove(recipeImageCachePath(id, extension) + ".tmp");
+    }
+}
+
+bool Core::isCachedRecipeImageValid(const QString &id, const QString &path) const
+{
+    const QFileInfo fileInfo(path);
+    if (!fileInfo.exists() || fileInfo.size() < 1) {
+        qWarning() << "Recipe image cache file is empty or missing" << id << path << fileInfo.size();
+        return false;
+    }
+
+    QImageReader reader(path);
+    if (!reader.canRead()) {
+        qWarning() << "Recipe image cache file is not readable" << id << path << reader.errorString();
+        return false;
+    }
+
+    return true;
+}
+
+QString Core::recipeImageCachePath(const QString &id, const QString &extension) const
+{
+    auto cacheDir = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
+    if (cacheDir.isEmpty()) {
+        cacheDir = QDir::temp().filePath("harbour-nextcloud-cookbook");
+    }
+    return QDir(cacheDir).filePath(QString("recipes/%1.%2").arg(cacheSafeID(id), extension));
+}
+
+QString Core::detectImageExtension(const QByteArray &data) const
+{
+    const QByteArray pngSignature("\x89PNG\r\n\x1a\n", 8);
+    if (data.startsWith(pngSignature)) {
+        return "png";
+    }
+
+    const auto trimmed = data.trimmed();
+    if (trimmed.startsWith("<svg") || (trimmed.startsWith("<?xml") && trimmed.contains("<svg"))) {
+        return "svg";
+    }
+
+    if (data.startsWith("\xff\xd8\xff")) {
+        return "jpg";
+    }
+
+    if (data.size() >= 12 && data.mid(0, 4) == "RIFF" && data.mid(8, 4) == "WEBP") {
+        return "webp";
+    }
+
+    if (data.startsWith("GIF87a") || data.startsWith("GIF89a")) {
+        return "gif";
+    }
+
+    return {};
+}
+
+QString Core::cacheSafeID(const QString &id) const
+{
+    QString safe;
+    safe.reserve(id.size());
+
+    for (const auto character : id) {
+        if (character.isLetterOrNumber() || character == '-' || character == '_') {
+            safe.append(character);
+        } else {
+            safe.append('_');
+        }
+    }
+
+    return safe;
 }
 
 QJsonObject Core::mapRecipeStub(const CookbookRecipeStub &recipe) const
