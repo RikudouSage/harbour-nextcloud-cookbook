@@ -285,6 +285,24 @@ void Core::renameCategory(const QString &category, const QString &newName)
     });
 }
 
+void Core::getRecipe(const QString &id)
+{
+    QtConcurrent::run([=] {
+        auto idData = id.toUtf8();
+
+        CookbookRecipe recipe = {};
+        if (CookbookGetRecipe(ctx, client, idData.data(), &recipe) != CookbookSuccess) {
+            qWarning() << "Failed getting recipe: " << getLastError();
+            emit recipeResolved(false, {});
+            return;
+        }
+
+        const auto result = mapRecipe(recipe);
+        CookbookFreeRecipe(&recipe);
+        emit recipeResolved(true, result);
+    });
+}
+
 void Core::importRecipe(const QString &url)
 {
     QtConcurrent::run([=] {

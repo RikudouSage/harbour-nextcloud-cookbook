@@ -190,7 +190,10 @@ StandardPage {
             width: page.width
             recipe: modelData
 
-            onClicked: console.warn("Recipe detail page is not implemented yet")
+            onClicked: pageStack.push("RecipeDetailPage.qml", {
+                recipeId: recipe.id || "",
+                recipe: recipe
+            })
             onEditRequested: console.warn("Recipe edit page is not implemented yet")
             onShareRequested: console.warn("Recipe sharing is not implemented yet")
             onDeleteRequested: {

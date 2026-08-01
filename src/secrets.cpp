@@ -1,5 +1,11 @@
 #include "secrets.h"
 
+#include <QDebug>
+#include <QJsonDocument>
+#include <QJsonParseError>
+#include <QSettings>
+
+#ifndef QT_DEBUG
 #include <Sailfish/Secrets/collectionnamesrequest.h>
 #include <Sailfish/Secrets/createcollectionrequest.h>
 #include <Sailfish/Secrets/result.h>
@@ -8,11 +14,6 @@
 #include <Sailfish/Secrets/storedsecretrequest.h>
 #include <Sailfish/Secrets/deletesecretrequest.h>
 #include <Sailfish/Secrets/deletecollectionrequest.h>
-
-#include <QDebug>
-#include <QJsonDocument>
-#include <QJsonParseError>
-#include <QSettings>
 
 using Sailfish::Secrets::CollectionNamesRequest;
 using Sailfish::Secrets::SecretManager;
@@ -26,10 +27,13 @@ using Sailfish::Secrets::DeleteSecretRequest;
 using Sailfish::Secrets::DeleteCollectionRequest;
 
 const QString Secrets::collectionName(QStringLiteral("cookbook"));
+#endif
+
 
 constexpr auto secretNameUsername = "username";
 constexpr auto secretNamePassword = "password";
 constexpr auto secretNameNextcloudUrl = "nextcloudUrl";
+constexpr auto secretNameKeepScreenOn = "keepScreenOn";
 
 #ifdef QT_DEBUG
 static QSettings &insecureEmulatorSecrets()
@@ -69,6 +73,11 @@ QString Secrets::nextcloudUrl()
     return getData(secretNameNextcloudUrl);
 }
 
+bool Secrets::keepScreenOn()
+{
+    return getData(secretNameKeepScreenOn) == "true";
+}
+
 void Secrets::setUsername(const QString &username)
 {
     const auto current = this->username();
@@ -102,6 +111,18 @@ void Secrets::setNextcloudUrl(const QString &url)
     emit nextcloudUrlChanged();
 }
 
+void Secrets::setKeepScreenOn(bool on)
+{
+    const auto current = keepScreenOn();
+    if (on == current) {
+        return;
+    }
+
+    const auto strVal = on ? "true" : "false";
+    storeData(secretNameKeepScreenOn, strVal);
+    emit keepScreenOnChanged();
+}
+
 bool Secrets::clearAllSecrets()
 {
 #ifdef QT_DEBUG
@@ -125,6 +146,7 @@ bool Secrets::clearAllSecrets()
 #endif
 }
 
+#ifndef QT_DEBUG
 bool Secrets::isResultValid(const Request &request)
 {
     auto result = request.result();
@@ -140,6 +162,7 @@ bool Secrets::isSecretValid(const Secret &secret)
 {
     return !secret.name().isNull() && !secret.name().isEmpty();
 }
+#endif
 
 bool Secrets::storeData(const QString &name, const QString &data)
 {
@@ -174,6 +197,7 @@ bool Secrets::storeData(const QString &name, const QString &data)
 #endif
 }
 
+#ifndef QT_DEBUG
 Secret Secrets::getSecret(const QString &name)
 {
     if (!hasBitsailorCollection) {
@@ -194,6 +218,7 @@ Secret Secrets::getSecret(const QString &name)
 
     return ssr.secret();
 }
+#endif
 
 bool Secrets::deleteSecret(const QString &name)
 {
@@ -228,6 +253,7 @@ QString Secrets::getData(const QString &name)
 #endif
 }
 
+#ifndef QT_DEBUG
 bool Secrets::createCollection()
 {
     CreateCollectionRequest ccr;
@@ -251,3 +277,4 @@ Secret::Identifier Secrets::toIdentifier(const QString &name)
 {
     return Secret::Identifier(name, collectionName, SecretManager::DefaultEncryptedStoragePluginName);
 }
+#endif

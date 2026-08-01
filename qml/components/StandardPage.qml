@@ -7,7 +7,7 @@ SafePage {
     property alias flickable: flickable
     //% "Loading..."
     property string loadText: qsTrId("global.loading")
-    default property alias main: column.data
+    default property alias main: contentColumn.data
 
 
     signal contentYChanged(int contentY)
@@ -36,6 +36,17 @@ SafePage {
 
             PageHeader {
                 id: pageHeader
+            }
+
+            Column {
+                id: contentColumn
+                spacing: Theme.paddingLarge
+                width: page.width
+            }
+
+            Item {
+                width: parent.width
+                height: Theme.paddingLarge
             }
         }
     }

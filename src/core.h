@@ -29,6 +29,7 @@ public:
     Q_INVOKABLE void listCategories();
     Q_INVOKABLE void listKeywords();
     Q_INVOKABLE void renameCategory(const QString &category, const QString &newName);
+    Q_INVOKABLE void getRecipe(const QString &id);
     Q_INVOKABLE void importRecipe(const QString &url);
     Q_INVOKABLE void deleteRecipe(const QString &id);
     Q_INVOKABLE void resolveRecipeImage(const QString &id);
@@ -42,6 +43,7 @@ signals:
     void categoriesResolved(bool success, const QJsonArray &categories);
     void keywordsResolved(bool success, const QJsonArray &keywords);
     void categoryRenamed(bool success, const QJsonObject &category);
+    void recipeResolved(bool success, const QJsonObject &recipe);
     void recipeImported(bool success, const QJsonObject &recipe);
     void recipeDeleted(bool success);
     void recipeImageResolved(bool success, const QString &id, const QString &path);

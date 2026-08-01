@@ -32,6 +32,7 @@
     <message id="categories.uncategorized">
         <location filename="../qml/pages/CategoriesPage.qml" line="25"/>
         <location filename="../qml/pages/CategoryDetailPage.qml" line="17"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="90"/>
         <source>Uncategorized</source>
         <translation type="unfinished"></translation>
     </message>
@@ -44,6 +45,7 @@
         <location filename="../qml/pages/CategoriesPage.qml" line="49"/>
         <location filename="../qml/pages/CategoryDetailPage.qml" line="102"/>
         <location filename="../qml/pages/MainPage.qml" line="146"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="221"/>
         <location filename="../qml/pages/TagDetailPage.qml" line="60"/>
         <location filename="../qml/pages/TagsPage.qml" line="40"/>
         <source>Refresh</source>
@@ -215,6 +217,158 @@
     <message id="category_detail.category_name">
         <location filename="../qml/pages/RenameCategoryPage.qml" line="19"/>
         <source>Category name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_detail.loading">
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="32"/>
+        <source>Loading recipe...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_detail.nutrition.calories">
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="116"/>
+        <source>Calories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_detail.nutrition.carbohydrate">
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="118"/>
+        <source>Carbohydrate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_detail.nutrition.cholesterol">
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="120"/>
+        <source>Cholesterol</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_detail.nutrition.fat">
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="122"/>
+        <source>Fat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_detail.nutrition.fiber">
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="124"/>
+        <source>Fiber</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_detail.nutrition.protein">
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="126"/>
+        <source>Protein</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_detail.nutrition.saturated_fat">
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="128"/>
+        <source>Saturated fat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_detail.nutrition.serving_size">
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="130"/>
+        <source>Serving size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_detail.nutrition.sodium">
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="132"/>
+        <source>Sodium</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_detail.nutrition.sugar">
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="134"/>
+        <source>Sugar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_detail.nutrition.trans_fat">
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="136"/>
+        <source>Trans fat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_detail.nutrition.unsaturated_fat">
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="138"/>
+        <source>Unsaturated fat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_detail.preparation_time">
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="147"/>
+        <source>Preparation</source>
+        <oldsource>Preparation time</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_detail.cooking_time">
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="149"/>
+        <source>Cooking</source>
+        <oldsource>Cooking time</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_detail.total_time">
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="151"/>
+        <source>Total time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_detail.created">
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="160"/>
+        <source>Created</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_detail.modified">
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="162"/>
+        <source>Modified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_detail.category">
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="164"/>
+        <source>Category</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_detail.error">
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="196"/>
+        <source>Could not load recipe. Pull down to refresh.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_detail.keep_screen_on">
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="302"/>
+        <source>Keep screen on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_detail.durations">
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="334"/>
+        <source>Durations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_detail.source">
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="176"/>
+        <source>Source: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_detail.servings">
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="327"/>
+        <source>Servings: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_detail.ingredients">
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="390"/>
+        <source>Ingredients</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_detail.instructions">
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="414"/>
+        <source>Instructions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_detail.step">
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="434"/>
+        <source>Step %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_detail.tools">
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="454"/>
+        <source>Tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_detail.nutrition">
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="478"/>
+        <source>Nutrition Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="recipe_detail.empty">
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="515"/>
+        <source>No recipe details</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
