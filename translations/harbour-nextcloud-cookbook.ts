@@ -123,6 +123,10 @@
         <source>Uncategorized</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="main.search_error">
+        <source>Could not search recipes.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>

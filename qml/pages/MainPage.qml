@@ -9,6 +9,7 @@ StandardPage {
     property var recipes: []
     property string errorText
     property bool searchLoading: false
+    property string searchContext
 
     id: page
     title: scopeTitle
@@ -25,11 +26,29 @@ StandardPage {
     function searchRecipes() {
         errorText = "";
         if (search.text.length > 0) {
+            resetSearchContext();
+            searchContext = core.createContext();
+            if (!searchContext) {
+                //% "Could not search recipes."
+                errorText = qsTrId("main.search_error");
+                return;
+            }
+
             searchLoading = true;
-            core.searchRecipes(search.text);
+            core.searchRecipes(searchContext, search.text);
         } else {
+            resetSearchContext();
             refresh();
         }
+    }
+
+    function resetSearchContext() {
+        if (!searchContext) {
+            return;
+        }
+
+        core.freeContext(searchContext);
+        searchContext = "";
     }
 
     function logout() {
@@ -44,8 +63,15 @@ StandardPage {
         target: core
 
         onRecipesResolved: {
+            core.freeContext(context);
+            if (searchContext && context !== searchContext) {
+                return;
+            }
+
             loading = false;
             searchLoading = false;
+            searchContext = "";
+
             if (!success) {
                 //% "Could not load recipes. Pull down to refresh."
                 errorText = qsTrId("main.recipes_error");

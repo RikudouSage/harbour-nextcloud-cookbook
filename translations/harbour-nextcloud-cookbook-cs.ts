@@ -80,38 +80,43 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="main.loading_recipes">
-        <location filename="../qml/pages/MainPage.qml" line="20"/>
-        <location filename="../qml/pages/MainPage.qml" line="128"/>
+        <location filename="../qml/pages/MainPage.qml" line="21"/>
+        <location filename="../qml/pages/MainPage.qml" line="154"/>
         <source>Loading recipes...</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="main.search_error">
+        <location filename="../qml/pages/MainPage.qml" line="33"/>
+        <source>Could not search recipes.</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message id="main.recipes_error">
-        <location filename="../qml/pages/MainPage.qml" line="51"/>
+        <location filename="../qml/pages/MainPage.qml" line="77"/>
         <source>Could not load recipes. Pull down to refresh.</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="main.import_error">
-        <location filename="../qml/pages/MainPage.qml" line="63"/>
+        <location filename="../qml/pages/MainPage.qml" line="89"/>
         <source>Could not import recipe.</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="main.delete_error">
-        <location filename="../qml/pages/MainPage.qml" line="73"/>
+        <location filename="../qml/pages/MainPage.qml" line="99"/>
         <source>Could not delete recipe.</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="main.logout">
-        <location filename="../qml/pages/MainPage.qml" line="84"/>
+        <location filename="../qml/pages/MainPage.qml" line="110"/>
         <source>Logout</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="main.create_recipe">
-        <location filename="../qml/pages/MainPage.qml" line="90"/>
+        <location filename="../qml/pages/MainPage.qml" line="116"/>
         <source>Create recipe</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="main.import_from_url">
-        <location filename="../qml/pages/MainPage.qml" line="96"/>
+        <location filename="../qml/pages/MainPage.qml" line="122"/>
         <source>Import from URL</source>
         <translation type="unfinished"></translation>
     </message>
@@ -137,7 +142,7 @@
     </message>
     <message id="main.refresh">
         <location filename="../qml/pages/CategoriesPage.qml" line="49"/>
-        <location filename="../qml/pages/MainPage.qml" line="102"/>
+        <location filename="../qml/pages/MainPage.qml" line="128"/>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
@@ -147,12 +152,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="main.search_recipes">
-        <location filename="../qml/pages/MainPage.qml" line="112"/>
+        <location filename="../qml/pages/MainPage.qml" line="138"/>
         <source>Search recipes</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="main.empty">
-        <location filename="../qml/pages/MainPage.qml" line="136"/>
+        <location filename="../qml/pages/MainPage.qml" line="162"/>
         <source>No recipes</source>
         <translation type="unfinished"></translation>
     </message>

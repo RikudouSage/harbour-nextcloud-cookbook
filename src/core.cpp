@@ -22,6 +22,12 @@ QString cString(const char *value)
     return value == nullptr ? QString() : QString::fromUtf8(value);
 }
 
+bool isContextCanceledError(const QString &error)
+{
+    return error.contains("context canceled", Qt::CaseInsensitive)
+           || error.contains("context cancelled", Qt::CaseInsensitive);
+}
+
 }
 
 Core::Core(Secrets *secrets, QObject *parent)
@@ -93,37 +99,79 @@ void Core::validateCredentials(const QString &url, const QString &username, cons
     });
 }
 
+QString Core::createContext()
+{
+    ContextHandle context = 0;
+    if (CookbookNewContext(&context) != CookbookSuccess) {
+        qWarning() << "Failed creating context:" << getLastError();
+        return {};
+    }
+
+    return contextToString(context);
+}
+
+void Core::freeContext(const QString &context)
+{
+    if (context.isEmpty() || context == "0") {
+        return;
+    }
+
+    const auto handle = contextFromString(context);
+    if (handle == 0) {
+        return;
+    }
+
+    CookbookCloseHandle(handle);
+}
+
 void Core::listRecipes()
 {
     QtConcurrent::run([=] {
         CookbookRecipeStubSlice recipes = {};
         if (CookbookListRecipes(ctx, client, &recipes) != CookbookSuccess) {
             qWarning() << "Failed listing recipes: " << getLastError();
-            emit recipesResolved(false, {});
+            emit recipesResolved("0", false, {});
             return;
         }
 
         const auto result = mapRecipes(recipes);
         CookbookFreeRecipeStubSlice(&recipes);
-        emit recipesResolved(true, result);
+        emit recipesResolved("0", true, result);
     });
 }
 
 void Core::searchRecipes(const QString &query)
 {
+    searchRecipes(contextToString(ctx), query);
+}
+
+void Core::searchRecipes(const QString &context, const QString &query)
+{
     QtConcurrent::run([=] {
+        const auto searchContext = contextFromString(context);
+        if (searchContext == 0) {
+            qWarning() << "Cannot search recipes with invalid context";
+            emit recipesResolved(context, false, {});
+            return;
+        }
+
         auto queryData = query.toUtf8();
 
         CookbookRecipeStubSlice recipes = {};
-        if (CookbookSearchRecipes(ctx, client, queryData.data(), &recipes) != CookbookSuccess) {
-            qWarning() << "Failed searching recipes: " << getLastError();
-            emit recipesResolved(false, {});
+        if (CookbookSearchRecipes(searchContext, client, queryData.data(), &recipes) != CookbookSuccess) {
+            const auto error = getLastError();
+            if (isContextCanceledError(error)) {
+                return;
+            }
+
+            qWarning() << "Failed searching recipes: " << error;
+            emit recipesResolved(context, false, {});
             return;
         }
 
         const auto result = mapRecipes(recipes);
         CookbookFreeRecipeStubSlice(&recipes);
-        emit recipesResolved(true, result);
+        emit recipesResolved(context, true, result);
     });
 }
 
@@ -137,13 +185,13 @@ void Core::listCategoryRecipes(const QString &category)
         CookbookRecipeStubSlice recipes = {};
         if (CookbookGetCategoryRecipes(ctx, client, &categoryInput, &recipes) != CookbookSuccess) {
             qWarning() << "Failed listing category recipes: " << getLastError();
-            emit recipesResolved(false, {});
+            emit recipesResolved("0", false, {});
             return;
         }
 
         const auto result = mapRecipes(recipes);
         CookbookFreeRecipeStubSlice(&recipes);
-        emit recipesResolved(true, result);
+        emit recipesResolved("0", true, result);
     });
 }
 
@@ -169,13 +217,13 @@ void Core::listKeywordRecipes(const QJsonArray &keywords)
         CookbookRecipeStubSlice recipes = {};
         if (CookbookGetKeywordRecipes(ctx, client, keywordSlice, &recipes) != CookbookSuccess) {
             qWarning() << "Failed listing keyword recipes: " << getLastError();
-            emit recipesResolved(false, {});
+            emit recipesResolved("0", false, {});
             return;
         }
 
         const auto result = mapRecipes(recipes);
         CookbookFreeRecipeStubSlice(&recipes);
-        emit recipesResolved(true, result);
+        emit recipesResolved("0", true, result);
     });
 }
 
@@ -339,6 +387,22 @@ const QString Core::getLastError() const
     CookbookGetLastError(buf.data(), static_cast<std::size_t>(buf.size()));
 
     return QString::fromUtf8(buf.constData());
+}
+
+ContextHandle Core::contextFromString(const QString &context) const
+{
+    bool ok = false;
+    const auto handle = context.toULongLong(&ok);
+    if (!ok) {
+        return 0;
+    }
+
+    return static_cast<ContextHandle>(handle);
+}
+
+QString Core::contextToString(ContextHandle context) const
+{
+    return QString::number(static_cast<qulonglong>(context));
 }
 
 QJsonArray Core::mapRecipes(const CookbookRecipeStubSlice &recipes) const
