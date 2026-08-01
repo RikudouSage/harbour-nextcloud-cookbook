@@ -24,10 +24,12 @@ DISTFILES += qml/harbour-nextcloud-cookbook.qml \
     qml/components/TaxonomyListItem.qml \
     qml/cover/CoverPage.qml \
     qml/pages/CategoriesPage.qml \
+    qml/pages/CategoryDetailPage.qml \
     qml/pages/CheckPage.qml \
     qml/pages/ImportRecipePage.qml \
     qml/pages/LoginPage.qml \
     qml/pages/MainPage.qml \
+    qml/pages/RenameCategoryPage.qml \
     qml/pages/TagsPage.qml \
     rpm/harbour-nextcloud-cookbook.changes.in \
     rpm/harbour-nextcloud-cookbook.changes.run.in \

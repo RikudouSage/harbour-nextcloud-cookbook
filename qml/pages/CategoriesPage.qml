@@ -73,7 +73,9 @@ StandardPage {
             name: displayCategoryName(modelData)
             count: modelData.recipeCount || 0
 
-            onClicked: console.warn("Category selection is not implemented yet")
+            onClicked: pageStack.push("CategoryDetailPage.qml", {
+                categoryName: modelData.name || ""
+            })
         }
     }
 

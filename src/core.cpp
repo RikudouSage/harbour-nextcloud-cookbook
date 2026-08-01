@@ -259,6 +259,27 @@ void Core::listKeywords()
     });
 }
 
+void Core::renameCategory(const QString &category, const QString &newName)
+{
+    QtConcurrent::run([=] {
+        auto categoryData = category.toUtf8();
+        auto newNameData = newName.toUtf8();
+        CookbookCategory categoryInput = {};
+        categoryInput.name = categoryData.data();
+
+        CookbookCategory renamed = {};
+        if (CookbookRenameCategory(ctx, client, &categoryInput, newNameData.data(), &renamed) != CookbookSuccess) {
+            qWarning() << "Failed renaming category: " << getLastError();
+            emit categoryRenamed(false, {});
+            return;
+        }
+
+        const auto result = mapCategory(renamed);
+        CookbookFreeCategory(&renamed);
+        emit categoryRenamed(true, result);
+    });
+}
+
 void Core::importRecipe(const QString &url)
 {
     QtConcurrent::run([=] {
@@ -569,15 +590,19 @@ QJsonObject Core::mapRecipe(const CookbookRecipe &recipe) const
     return outRecipe;
 }
 
+QJsonObject Core::mapCategory(const CookbookCategory &category) const
+{
+    QJsonObject result;
+    result.insert("name", cString(category.name));
+    result.insert("recipeCount", static_cast<int>(category.recipeCount));
+    return result;
+}
+
 QJsonArray Core::mapCategories(const CookbookCategorySlice &categories) const
 {
     QJsonArray result;
     for (size_t i = 0; i < categories.len; ++i) {
-        const auto category = categories.items[i];
-        QJsonObject outCategory;
-        outCategory.insert("name", cString(category.name));
-        outCategory.insert("recipeCount", static_cast<int>(category.recipeCount));
-        result.append(outCategory);
+        result.append(mapCategory(categories.items[i]));
     }
     return result;
 }

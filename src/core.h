@@ -27,6 +27,7 @@ public:
     Q_INVOKABLE void listKeywordRecipes(const QJsonArray &keywords);
     Q_INVOKABLE void listCategories();
     Q_INVOKABLE void listKeywords();
+    Q_INVOKABLE void renameCategory(const QString &category, const QString &newName);
     Q_INVOKABLE void importRecipe(const QString &url);
     Q_INVOKABLE void deleteRecipe(const QString &id);
     Q_INVOKABLE void resolveRecipeImage(const QString &id);
@@ -39,6 +40,7 @@ signals:
     void recipesResolved(const QString &context, bool success, const QJsonArray &recipes);
     void categoriesResolved(bool success, const QJsonArray &categories);
     void keywordsResolved(bool success, const QJsonArray &keywords);
+    void categoryRenamed(bool success, const QJsonObject &category);
     void recipeImported(bool success, const QJsonObject &recipe);
     void recipeDeleted(bool success);
     void recipeImageResolved(bool success, const QString &id, const QString &path);
@@ -59,6 +61,7 @@ private:
     QJsonArray mapRecipes(const CookbookRecipeStubSlice &recipes) const;
     QJsonObject mapRecipeStub(const CookbookRecipeStub &recipe) const;
     QJsonObject mapRecipe(const CookbookRecipe &recipe) const;
+    QJsonObject mapCategory(const CookbookCategory &category) const;
     QJsonArray mapCategories(const CookbookCategorySlice &categories) const;
     QJsonArray mapKeywords(const CookbookKeywordSlice &keywords) const;
     QJsonArray mapStringSlice(const StringSlice &slice) const;

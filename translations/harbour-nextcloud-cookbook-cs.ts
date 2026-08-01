@@ -31,6 +31,7 @@
     </message>
     <message id="categories.uncategorized">
         <location filename="../qml/pages/CategoriesPage.qml" line="25"/>
+        <location filename="../qml/pages/CategoryDetailPage.qml" line="17"/>
         <source>Uncategorized</source>
         <translation type="unfinished"></translation>
     </message>
@@ -41,7 +42,8 @@
     </message>
     <message id="main.refresh">
         <location filename="../qml/pages/CategoriesPage.qml" line="49"/>
-        <location filename="../qml/pages/MainPage.qml" line="142"/>
+        <location filename="../qml/pages/CategoryDetailPage.qml" line="102"/>
+        <location filename="../qml/pages/MainPage.qml" line="146"/>
         <location filename="../qml/pages/TagsPage.qml" line="40"/>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
@@ -78,13 +80,14 @@
     </message>
     <message id="main.import_from_url">
         <location filename="../qml/pages/ImportRecipePage.qml" line="11"/>
-        <location filename="../qml/pages/MainPage.qml" line="136"/>
+        <location filename="../qml/pages/MainPage.qml" line="140"/>
         <source>Import from URL</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="dialog.cancel">
         <location filename="../qml/pages/ImportRecipePage.qml" line="13"/>
         <location filename="../qml/pages/LoginPage.qml" line="17"/>
+        <location filename="../qml/pages/RenameCategoryPage.qml" line="13"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -119,9 +122,26 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="main.loading_recipes">
+        <location filename="../qml/pages/CategoryDetailPage.qml" line="29"/>
         <location filename="../qml/pages/MainPage.qml" line="22"/>
-        <location filename="../qml/pages/MainPage.qml" line="168"/>
+        <location filename="../qml/pages/MainPage.qml" line="172"/>
         <source>Loading recipes...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="category_detail.renaming">
+        <location filename="../qml/pages/CategoryDetailPage.qml" line="44"/>
+        <source>Renaming category...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="category_detail.rename_error">
+        <location filename="../qml/pages/CategoryDetailPage.qml" line="84"/>
+        <source>Could not rename category.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="category_detail.rename">
+        <location filename="../qml/pages/CategoryDetailPage.qml" line="96"/>
+        <location filename="../qml/pages/RenameCategoryPage.qml" line="11"/>
+        <source>Rename category</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="main.search_error">
@@ -135,32 +155,35 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="main.recipes_error">
-        <location filename="../qml/pages/MainPage.qml" line="91"/>
+        <location filename="../qml/pages/CategoryDetailPage.qml" line="62"/>
+        <location filename="../qml/pages/MainPage.qml" line="95"/>
         <source>Could not load recipes. Pull down to refresh.</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="main.import_error">
-        <location filename="../qml/pages/MainPage.qml" line="103"/>
+        <location filename="../qml/pages/MainPage.qml" line="107"/>
         <source>Could not import recipe.</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="main.delete_error">
-        <location filename="../qml/pages/MainPage.qml" line="113"/>
+        <location filename="../qml/pages/CategoryDetailPage.qml" line="72"/>
+        <location filename="../qml/pages/MainPage.qml" line="117"/>
         <source>Could not delete recipe.</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="main.logout">
-        <location filename="../qml/pages/MainPage.qml" line="124"/>
+        <location filename="../qml/pages/MainPage.qml" line="128"/>
         <source>Logout</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="main.search_recipes">
-        <location filename="../qml/pages/MainPage.qml" line="152"/>
+        <location filename="../qml/pages/MainPage.qml" line="156"/>
         <source>Search recipes</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="main.empty">
-        <location filename="../qml/pages/MainPage.qml" line="176"/>
+        <location filename="../qml/pages/CategoryDetailPage.qml" line="115"/>
+        <location filename="../qml/pages/MainPage.qml" line="180"/>
         <source>No recipes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -182,6 +205,11 @@
     <message id="tags.empty">
         <location filename="../qml/pages/TagsPage.qml" line="53"/>
         <source>No tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="category_detail.category_name">
+        <location filename="../qml/pages/RenameCategoryPage.qml" line="19"/>
+        <source>Category name</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -77,10 +77,14 @@ StandardPage {
         target: core
 
         onRecipesResolved: {
-            core.freeContext(context);
+            if (page.status !== PageStatus.Active && page.status !== PageStatus.Activating) {
+                return;
+            }
+
             if (searchContext && context !== searchContext) {
                 return;
             }
+            core.freeContext(context);
 
             loading = false;
             searchLoading = false;

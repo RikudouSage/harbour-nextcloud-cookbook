@@ -143,5 +143,21 @@
         <source>Recipe URL</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="category_detail.renaming">
+        <source>Renaming category...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="category_detail.rename_error">
+        <source>Could not rename category.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="category_detail.rename">
+        <source>Rename category</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="category_detail.category_name">
+        <source>Category name</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
