@@ -143,7 +143,7 @@
     <message id="categories.uncategorized">
         <location filename="../qml/pages/CategoriesPage.qml" line="25"/>
         <location filename="../qml/pages/CategoryDetailPage.qml" line="17"/>
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="90"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="96"/>
         <source>Uncategorized</source>
         <translation>Uncategorized</translation>
     </message>
@@ -156,7 +156,7 @@
         <location filename="../qml/pages/CategoriesPage.qml" line="49"/>
         <location filename="../qml/pages/CategoryDetailPage.qml" line="102"/>
         <location filename="../qml/pages/MainPage.qml" line="146"/>
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="221"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="227"/>
         <location filename="../qml/pages/TagDetailPage.qml" line="60"/>
         <location filename="../qml/pages/TagsPage.qml" line="40"/>
         <source>Refresh</source>
@@ -220,149 +220,149 @@
         <translation>Loading recipe...</translation>
     </message>
     <message id="recipe_detail.nutrition.calories">
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="116"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="122"/>
         <source>Calories</source>
         <translation>Calories</translation>
     </message>
     <message id="recipe_detail.nutrition.carbohydrate">
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="118"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="124"/>
         <source>Carbohydrate</source>
         <translation>Carbohydrate</translation>
     </message>
     <message id="recipe_detail.nutrition.cholesterol">
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="120"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="126"/>
         <source>Cholesterol</source>
         <translation>Cholesterol</translation>
     </message>
     <message id="recipe_detail.nutrition.fat">
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="122"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="128"/>
         <source>Fat</source>
         <translation>Fat</translation>
     </message>
     <message id="recipe_detail.nutrition.fiber">
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="124"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="130"/>
         <source>Fiber</source>
         <translation>Fiber</translation>
     </message>
     <message id="recipe_detail.nutrition.protein">
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="126"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="132"/>
         <source>Protein</source>
         <translation>Protein</translation>
     </message>
     <message id="recipe_detail.nutrition.saturated_fat">
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="128"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="134"/>
         <source>Saturated fat</source>
         <translation>Saturated fat</translation>
     </message>
     <message id="recipe_detail.nutrition.serving_size">
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="130"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="136"/>
         <source>Serving size</source>
         <translation>Serving size</translation>
     </message>
     <message id="recipe_detail.nutrition.sodium">
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="132"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="138"/>
         <source>Sodium</source>
         <translation>Sodium</translation>
     </message>
     <message id="recipe_detail.nutrition.sugar">
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="134"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="140"/>
         <source>Sugar</source>
         <translation>Sugar</translation>
     </message>
     <message id="recipe_detail.nutrition.trans_fat">
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="136"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="142"/>
         <source>Trans fat</source>
         <translation>Trans fat</translation>
     </message>
     <message id="recipe_detail.nutrition.unsaturated_fat">
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="138"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="144"/>
         <source>Unsaturated fat</source>
         <translation>Unsaturated fat</translation>
     </message>
     <message id="recipe_detail.preparation_time">
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="147"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="153"/>
         <source>Preparation</source>
         <oldsource>Preparation time</oldsource>
         <translation>Preparation</translation>
     </message>
     <message id="recipe_detail.cooking_time">
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="149"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="155"/>
         <source>Cooking</source>
         <oldsource>Cooking time</oldsource>
         <translation>Cooking</translation>
     </message>
     <message id="recipe_detail.total_time">
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="151"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="157"/>
         <source>Total time</source>
         <translation>Total time</translation>
     </message>
     <message id="recipe_detail.created">
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="160"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="166"/>
         <source>Created</source>
         <translation>Created</translation>
     </message>
     <message id="recipe_detail.modified">
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="162"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="168"/>
         <source>Modified</source>
         <translation>Modified</translation>
     </message>
     <message id="recipe_detail.category">
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="164"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="170"/>
         <source>Category</source>
         <translation>Category</translation>
     </message>
     <message id="recipe_detail.error">
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="196"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="202"/>
         <source>Could not load recipe. Pull down to refresh.</source>
         <translation>Could not load recipe. Pull down to refresh.</translation>
     </message>
     <message id="recipe_detail.keep_screen_on">
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="302"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="308"/>
         <source>Keep screen on</source>
         <translation>Keep screen on</translation>
     </message>
     <message id="recipe_detail.durations">
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="334"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="340"/>
         <source>Durations</source>
         <translation>Durations</translation>
     </message>
     <message id="recipe_detail.source">
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="176"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="182"/>
         <source>Source: %1</source>
         <translation>Source: %1</translation>
     </message>
     <message id="recipe_detail.servings">
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="327"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="333"/>
         <source>Servings: %1</source>
         <translation>Servings: %1</translation>
     </message>
     <message id="recipe_detail.ingredients">
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="390"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="396"/>
         <source>Ingredients</source>
         <translation>Ingredients</translation>
     </message>
     <message id="recipe_detail.instructions">
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="414"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="420"/>
         <source>Instructions</source>
         <translation>Instructions</translation>
     </message>
     <message id="recipe_detail.step">
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="434"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="440"/>
         <source>Step %1</source>
         <translation>Step %1</translation>
     </message>
     <message id="recipe_detail.tools">
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="454"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="460"/>
         <source>Tools</source>
         <translation>Tools</translation>
     </message>
     <message id="recipe_detail.nutrition">
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="478"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="484"/>
         <source>Nutrition Information</source>
         <translation>Nutrition Information</translation>
     </message>
     <message id="recipe_detail.empty">
-        <location filename="../qml/pages/RecipeDetailPage.qml" line="515"/>
+        <location filename="../qml/pages/RecipeDetailPage.qml" line="521"/>
         <source>No recipe details</source>
         <translation>No recipe details</translation>
     </message>

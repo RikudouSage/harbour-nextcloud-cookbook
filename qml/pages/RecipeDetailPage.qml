@@ -55,17 +55,23 @@ StandardPage {
             return "";
         }
 
-        const match = /^P(?:T)?(?:(\d+)H)?(?:(\d+)M)?$/.exec(value);
+        const match = /^P(?:(\d+)D)?(?:T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?)?$/.exec(value);
         if (!match) {
             return value;
         }
 
         const parts = [];
-        if (match[1]) {
-            parts.push(match[1] + "h");
+        if (match[1] && Number(match[1]) > 0) {
+            parts.push(match[1] + "d");
         }
-        if (match[2]) {
-            parts.push(match[2] + "m");
+        if (match[2] && Number(match[2]) > 0) {
+            parts.push(match[2] + "h");
+        }
+        if (match[3] && Number(match[3]) > 0) {
+            parts.push(match[3] + "m");
+        }
+        if (match[4] && Number(match[4]) > 0) {
+            parts.push(match[4] + "s");
         }
         return parts.join(" ");
     }
