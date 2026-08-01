@@ -73,7 +73,7 @@
     <message id="main.search_error">
         <location filename="../qml/pages/MainPage.qml" line="33"/>
         <source>Could not search recipes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Could not search recipes.</translation>
     </message>
     <message id="main.recipes_error">
         <location filename="../qml/pages/MainPage.qml" line="77"/>
@@ -160,14 +160,6 @@
         <location filename="../qml/components/RecipeListItem.qml" line="169"/>
         <source>Share</source>
         <translation>Share</translation>
-    </message>
-</context>
-<context>
-    <name>CoverPage</name>
-    <message>
-        <location filename="../qml/cover/CoverPage.qml" line="8"/>
-        <source>My Cover</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

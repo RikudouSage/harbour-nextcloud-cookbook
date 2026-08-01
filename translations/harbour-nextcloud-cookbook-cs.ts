@@ -162,12 +162,4 @@
         <translation type="unfinished"></translation>
     </message>
 </context>
-<context>
-    <name>CoverPage</name>
-    <message>
-        <location filename="../qml/cover/CoverPage.qml" line="8"/>
-        <source>My Cover</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
 </TS>
