@@ -127,5 +127,21 @@
         <source>Could not search recipes.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="tags.title">
+        <source>Tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="tags.loading">
+        <source>Loading tags...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="tags.error">
+        <source>Could not load tags. Pull down to refresh.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="tags.empty">
+        <source>No tags</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

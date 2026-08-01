@@ -27,6 +27,7 @@ DISTFILES += qml/harbour-nextcloud-cookbook.qml \
     qml/pages/CheckPage.qml \
     qml/pages/LoginPage.qml \
     qml/pages/MainPage.qml \
+    qml/pages/TagsPage.qml \
     rpm/harbour-nextcloud-cookbook.changes.in \
     rpm/harbour-nextcloud-cookbook.changes.run.in \
     rpm/harbour-nextcloud-cookbook.spec \

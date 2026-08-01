@@ -123,6 +123,7 @@
     <message id="main.refresh">
         <location filename="../qml/pages/CategoriesPage.qml" line="49"/>
         <location filename="../qml/pages/MainPage.qml" line="128"/>
+        <location filename="../qml/pages/TagsPage.qml" line="40"/>
         <source>Refresh</source>
         <translation>Refresh</translation>
     </message>
@@ -160,6 +161,26 @@
         <location filename="../qml/components/RecipeListItem.qml" line="169"/>
         <source>Share</source>
         <translation>Share</translation>
+    </message>
+    <message id="tags.title">
+        <location filename="../qml/pages/TagsPage.qml" line="12"/>
+        <source>Tags</source>
+        <translation>Tags</translation>
+    </message>
+    <message id="tags.loading">
+        <location filename="../qml/pages/TagsPage.qml" line="18"/>
+        <source>Loading tags...</source>
+        <translation>Loading tags...</translation>
+    </message>
+    <message id="tags.error">
+        <location filename="../qml/pages/TagsPage.qml" line="29"/>
+        <source>Could not load tags. Pull down to refresh.</source>
+        <translation>Could not load tags. Pull down to refresh.</translation>
+    </message>
+    <message id="tags.empty">
+        <location filename="../qml/pages/TagsPage.qml" line="53"/>
+        <source>No tags</source>
+        <translation>No tags</translation>
     </message>
 </context>
 </TS>

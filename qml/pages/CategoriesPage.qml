@@ -77,5 +77,10 @@ StandardPage {
         }
     }
 
-    Component.onCompleted: refresh()
+    Component.onCompleted: {
+        refresh();
+        safeCall(function() {
+            pageStack.pushAttached("TagsPage.qml");
+        });
+    }
 }

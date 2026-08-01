@@ -143,6 +143,7 @@
     <message id="main.refresh">
         <location filename="../qml/pages/CategoriesPage.qml" line="49"/>
         <location filename="../qml/pages/MainPage.qml" line="128"/>
+        <location filename="../qml/pages/TagsPage.qml" line="40"/>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
@@ -159,6 +160,26 @@
     <message id="main.empty">
         <location filename="../qml/pages/MainPage.qml" line="162"/>
         <source>No recipes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="tags.title">
+        <location filename="../qml/pages/TagsPage.qml" line="12"/>
+        <source>Tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="tags.loading">
+        <location filename="../qml/pages/TagsPage.qml" line="18"/>
+        <source>Loading tags...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="tags.error">
+        <location filename="../qml/pages/TagsPage.qml" line="29"/>
+        <source>Could not load tags. Pull down to refresh.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="tags.empty">
+        <location filename="../qml/pages/TagsPage.qml" line="53"/>
+        <source>No tags</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
