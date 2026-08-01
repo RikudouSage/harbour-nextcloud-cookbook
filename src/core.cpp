@@ -20,8 +20,8 @@ void Core::initialize()
     }
 
     auto url = secrets->nextcloudUrl().toUtf8();
-    auto username = secrets->nextcloudUrl().toUtf8();
-    auto password = secrets->nextcloudUrl().toUtf8();
+    auto username = secrets->username().toUtf8();
+    auto password = secrets->password().toUtf8();
 
     if (CookbookNewClient(&client, NewClientOptions {
         .url = url.data(),
