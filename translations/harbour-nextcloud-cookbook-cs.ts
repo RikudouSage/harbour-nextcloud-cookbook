@@ -3,11 +3,6 @@
 <TS version="2.1">
 <context>
     <name></name>
-    <message id="recipe_item.edit">
-        <location filename="../qml/components/RecipeListItem.qml" line="157"/>
-        <source>Edit</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message id="recipe_item.delete">
         <location filename="../qml/components/RecipeListItem.qml" line="163"/>
         <source>Delete</source>
@@ -157,11 +152,6 @@
     <message id="main.logout">
         <location filename="../qml/pages/MainPage.qml" line="124"/>
         <source>Logout</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="main.create_recipe">
-        <location filename="../qml/pages/MainPage.qml" line="130"/>
-        <source>Create recipe</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="main.search_recipes">

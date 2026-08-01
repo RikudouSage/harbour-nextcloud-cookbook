@@ -152,11 +152,11 @@ ListItem {
         id: contextMenu
 
         ContextMenu {
-            MenuItem {
-                //% "Edit"
-                text: qsTrId("recipe_item.edit")
-                onClicked: listItem.editRequested(recipe)
-            }
+//            MenuItem {
+//                //% "Edit"
+//                text: qsTrId("recipe_item.edit")
+//                onClicked: listItem.editRequested(recipe)
+//            }
 
             MenuItem {
                 //% "Delete"

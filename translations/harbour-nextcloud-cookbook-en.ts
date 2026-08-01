@@ -101,11 +101,6 @@
         <source>Could not delete recipe.</source>
         <translation>Could not delete recipe.</translation>
     </message>
-    <message id="main.create_recipe">
-        <location filename="../qml/pages/MainPage.qml" line="130"/>
-        <source>Create recipe</source>
-        <translation>Create recipe</translation>
-    </message>
     <message id="main.import_from_url">
         <location filename="../qml/pages/ImportRecipePage.qml" line="11"/>
         <location filename="../qml/pages/MainPage.qml" line="136"/>
@@ -158,11 +153,6 @@
         <location filename="../qml/pages/MainPage.qml" line="176"/>
         <source>No recipes</source>
         <translation>No recipes</translation>
-    </message>
-    <message id="recipe_item.edit">
-        <location filename="../qml/components/RecipeListItem.qml" line="157"/>
-        <source>Edit</source>
-        <translation>Edit</translation>
     </message>
     <message id="recipe_item.delete">
         <location filename="../qml/components/RecipeListItem.qml" line="163"/>

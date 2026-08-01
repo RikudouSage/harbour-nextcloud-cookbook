@@ -67,10 +67,6 @@
         <source>Could not delete recipe.</source>
         <translation type="unfinished"></translation>
     </message>
-    <message id="main.create_recipe">
-        <source>Create recipe</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message id="main.import_from_url">
         <source>Import from URL</source>
         <translation type="unfinished"></translation>
@@ -89,10 +85,6 @@
     </message>
     <message id="main.empty">
         <source>No recipes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="recipe_item.edit">
-        <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="recipe_item.delete">

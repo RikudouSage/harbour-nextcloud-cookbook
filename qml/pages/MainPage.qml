@@ -125,11 +125,11 @@ StandardPage {
             onClicked: logout()
         }
 
-        MenuItem {
-            //% "Create recipe"
-            text: qsTrId("main.create_recipe")
-            onClicked: console.warn("Create recipe page is not implemented yet")
-        }
+//        MenuItem {
+//            //% "Create recipe"
+//            text: qsTrId("main.create_recipe")
+//            onClicked: console.warn("Create recipe page is not implemented yet")
+//        }
 
         MenuItem {
             //% "Import from URL"
