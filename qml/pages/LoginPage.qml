@@ -6,6 +6,8 @@ import "../components"
 StandardDialog {
     property alias username: usernameField.text
     property alias password: passwordField.text
+    property alias nextcloudUrl: nextcloudUrlField.text
+    property alias errorText: errorTextLabel.text
 
     id: page
 
@@ -14,7 +16,23 @@ StandardDialog {
     //% "Cancel"
     cancelText: qsTrId("dialog.cancel")
 
-    canAccept: username && password
+    canAccept: username && password && nextcloudUrl
+
+    StandardLabel {
+        id: errorTextLabel
+        color: Theme.errorColor
+        visible: text.length > 0
+    }
+
+    TextField {
+        id: nextcloudUrlField
+        //% "Nextcloud URL"
+        label: qsTrId("login.nextcloud_url")
+        inputMethodHints: Qt.ImhUrlCharactersOnly
+
+        EnterKey.iconSource: "image://theme/icon-m-enter-next"
+        EnterKey.onClicked: usernameField.focus = true;
+    }
 
     TextField {
         id: usernameField

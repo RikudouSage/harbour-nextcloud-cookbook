@@ -17,20 +17,24 @@ class Secrets : public QObject
     Q_OBJECT
     Q_PROPERTY(QString username READ username WRITE setUsername NOTIFY usernameChanged)
     Q_PROPERTY(QString password READ password WRITE setPassword NOTIFY passwordChanged)
+    Q_PROPERTY(QString nextcloudUrl READ nextcloudUrl WRITE setNextcloudUrl NOTIFY nextcloudUrlChanged)
 public:
     explicit Secrets(QObject *parent = nullptr);
 
     QString username();
     QString password();
+    QString nextcloudUrl();
 
     void setUsername(const QString &username);
     void setPassword(const QString &password);
+    void setNextcloudUrl(const QString &url);
 
     bool clearAllSecrets();
 
 signals:
     void usernameChanged();
     void passwordChanged();
+    void nextcloudUrlChanged();
 
 private:
     static const QString collectionName;

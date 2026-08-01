@@ -27,6 +27,34 @@
         <source>Password</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="login.nextcloud_url">
+        <source>Nextcloud URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="check.validating_credentials">
+        <source>Validating credentials...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="check.invalid_credentials">
+        <source>Invalid username or password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="check.initializing">
+        <source>Initializing...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="check.failed_initializing">
+        <source>There was an internal error while initializing. There&apos;s nothing you can do except reporting it to the developer.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="main.title">
+        <source>Recipes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="main.logout">
+        <source>Logout</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>

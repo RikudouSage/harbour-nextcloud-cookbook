@@ -6,6 +6,7 @@
 
 #include <sailfishapp.h>
 #include "secrets.h"
+#include "core.h"
 
 constexpr auto TRANSLATION_INSTALL_DIR = "/usr/share/harbour-nextcloud-cookbook/translations";
 
@@ -27,7 +28,11 @@ int main(int argc, char *argv[])
     QCoreApplication::installTranslator(translator);
 
     // custom deps
-    v->rootContext()->setContextProperty("secrets", new Secrets(app.data()));
+    auto secrets = new Secrets(app.data());
+    auto core = new Core(secrets, app.data());
+
+    v->rootContext()->setContextProperty("secrets", secrets);
+    v->rootContext()->setContextProperty("core", core);
     // end custom deps
 
     v->setSource(SailfishApp::pathToMainQml());

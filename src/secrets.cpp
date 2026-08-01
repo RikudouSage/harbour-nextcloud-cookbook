@@ -29,6 +29,7 @@ const QString Secrets::collectionName(QStringLiteral("cookbook"));
 
 constexpr auto secretNameUsername = "username";
 constexpr auto secretNamePassword = "password";
+constexpr auto secretNameNextcloudUrl = "nextcloudUrl";
 
 #ifdef QT_DEBUG
 static QSettings &insecureEmulatorSecrets()
@@ -63,6 +64,11 @@ QString Secrets::password()
     return getData(secretNamePassword);
 }
 
+QString Secrets::nextcloudUrl()
+{
+    return getData(secretNameNextcloudUrl);
+}
+
 void Secrets::setUsername(const QString &username)
 {
     const auto current = this->username();
@@ -83,6 +89,17 @@ void Secrets::setPassword(const QString &password)
 
     storeData(secretNamePassword, password);
     emit passwordChanged();
+}
+
+void Secrets::setNextcloudUrl(const QString &url)
+{
+    const auto current = nextcloudUrl();
+    if (url == current) {
+        return;
+    }
+
+    storeData(secretNameNextcloudUrl, url);
+    emit nextcloudUrlChanged();
 }
 
 bool Secrets::clearAllSecrets()

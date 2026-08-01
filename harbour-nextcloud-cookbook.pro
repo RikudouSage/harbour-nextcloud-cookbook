@@ -23,6 +23,7 @@ DISTFILES += qml/harbour-nextcloud-cookbook.qml \
     qml/cover/CoverPage.qml \
     qml/pages/CheckPage.qml \
     qml/pages/LoginPage.qml \
+    qml/pages/MainPage.qml \
     rpm/harbour-nextcloud-cookbook.changes.in \
     rpm/harbour-nextcloud-cookbook.changes.run.in \
     rpm/harbour-nextcloud-cookbook.spec \
