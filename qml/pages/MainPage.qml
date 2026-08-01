@@ -14,11 +14,13 @@ StandardPage {
     id: page
     title: scopeTitle
 
-    function refresh() {
+    function refresh(showLoading) {
         errorText = "";
-        loading = true;
-        //% "Loading recipes..."
-        loadText = qsTrId("main.loading_recipes");
+        if (showLoading !== false) {
+            loading = true;
+            //% "Loading recipes..."
+            loadText = qsTrId("main.loading_recipes");
+        }
 
         core.listRecipes();
     }
@@ -56,6 +58,18 @@ StandardPage {
         core.reinitialize();
         safeCall(function() {
             pageStack.replace("CheckPage.qml");
+        });
+    }
+
+    function pushImportRecipe() {
+        const dialog = pageStack.push("ImportRecipePage.qml");
+
+        dialog.accepted.connect(function() {
+            errorText = "";
+            loading = true;
+            //% "Importing recipe..."
+            loadText = qsTrId("import_recipe.importing");
+            core.importRecipe(dialog.url.trim());
         });
     }
 
@@ -100,7 +114,7 @@ StandardPage {
                 return;
             }
 
-            refresh();
+            refresh(false);
         }
     }
 
@@ -120,7 +134,7 @@ StandardPage {
         MenuItem {
             //% "Import from URL"
             text: qsTrId("main.import_from_url")
-            onClicked: console.warn("Import recipe page is not implemented yet")
+            onClicked: pushImportRecipe()
         }
 
         MenuItem {

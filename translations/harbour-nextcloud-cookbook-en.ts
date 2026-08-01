@@ -37,12 +37,13 @@
     <message id="login.login">
         <location filename="../qml/pages/LoginPage.qml" line="15"/>
         <source>Log In</source>
-        <translation>Přihlásit</translation>
+        <translation>Log In</translation>
     </message>
     <message id="dialog.cancel">
+        <location filename="../qml/pages/ImportRecipePage.qml" line="13"/>
         <location filename="../qml/pages/LoginPage.qml" line="17"/>
         <source>Cancel</source>
-        <translation>Zrušit</translation>
+        <translation>Cancel</translation>
     </message>
     <message id="login.nextcloud_url">
         <location filename="../qml/pages/LoginPage.qml" line="30"/>
@@ -65,38 +66,49 @@
         <translation>Recipes</translation>
     </message>
     <message id="main.loading_recipes">
-        <location filename="../qml/pages/MainPage.qml" line="21"/>
-        <location filename="../qml/pages/MainPage.qml" line="154"/>
+        <location filename="../qml/pages/MainPage.qml" line="22"/>
+        <location filename="../qml/pages/MainPage.qml" line="168"/>
         <source>Loading recipes...</source>
         <translation>Loading recipes...</translation>
     </message>
     <message id="main.search_error">
-        <location filename="../qml/pages/MainPage.qml" line="33"/>
+        <location filename="../qml/pages/MainPage.qml" line="35"/>
         <source>Could not search recipes.</source>
         <translation>Could not search recipes.</translation>
     </message>
     <message id="main.recipes_error">
-        <location filename="../qml/pages/MainPage.qml" line="77"/>
+        <location filename="../qml/pages/MainPage.qml" line="91"/>
         <source>Could not load recipes. Pull down to refresh.</source>
         <translation>Could not load recipes. Pull down to refresh.</translation>
     </message>
+    <message id="import_recipe.importing">
+        <location filename="../qml/pages/MainPage.qml" line="71"/>
+        <source>Importing recipe...</source>
+        <translation>Importing recipe...</translation>
+    </message>
     <message id="main.import_error">
-        <location filename="../qml/pages/MainPage.qml" line="89"/>
+        <location filename="../qml/pages/MainPage.qml" line="103"/>
         <source>Could not import recipe.</source>
         <translation>Could not import recipe.</translation>
     </message>
+    <message id="import_recipe.url">
+        <location filename="../qml/pages/ImportRecipePage.qml" line="19"/>
+        <source>Recipe URL</source>
+        <translation>Recipe URL</translation>
+    </message>
     <message id="main.delete_error">
-        <location filename="../qml/pages/MainPage.qml" line="99"/>
+        <location filename="../qml/pages/MainPage.qml" line="113"/>
         <source>Could not delete recipe.</source>
         <translation>Could not delete recipe.</translation>
     </message>
     <message id="main.create_recipe">
-        <location filename="../qml/pages/MainPage.qml" line="116"/>
+        <location filename="../qml/pages/MainPage.qml" line="130"/>
         <source>Create recipe</source>
         <translation>Create recipe</translation>
     </message>
     <message id="main.import_from_url">
-        <location filename="../qml/pages/MainPage.qml" line="122"/>
+        <location filename="../qml/pages/ImportRecipePage.qml" line="11"/>
+        <location filename="../qml/pages/MainPage.qml" line="136"/>
         <source>Import from URL</source>
         <translation>Import from URL</translation>
     </message>
@@ -122,7 +134,7 @@
     </message>
     <message id="main.refresh">
         <location filename="../qml/pages/CategoriesPage.qml" line="49"/>
-        <location filename="../qml/pages/MainPage.qml" line="128"/>
+        <location filename="../qml/pages/MainPage.qml" line="142"/>
         <location filename="../qml/pages/TagsPage.qml" line="40"/>
         <source>Refresh</source>
         <translation>Refresh</translation>
@@ -133,17 +145,17 @@
         <translation>No categories</translation>
     </message>
     <message id="main.logout">
-        <location filename="../qml/pages/MainPage.qml" line="110"/>
+        <location filename="../qml/pages/MainPage.qml" line="124"/>
         <source>Logout</source>
         <translation>Logout</translation>
     </message>
     <message id="main.search_recipes">
-        <location filename="../qml/pages/MainPage.qml" line="138"/>
+        <location filename="../qml/pages/MainPage.qml" line="152"/>
         <source>Search recipes</source>
         <translation>Search recipes</translation>
     </message>
     <message id="main.empty">
-        <location filename="../qml/pages/MainPage.qml" line="162"/>
+        <location filename="../qml/pages/MainPage.qml" line="176"/>
         <source>No recipes</source>
         <translation>No recipes</translation>
     </message>

@@ -143,5 +143,13 @@
         <source>No tags</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="import_recipe.importing">
+        <source>Importing recipe...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="import_recipe.url">
+        <source>Recipe URL</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

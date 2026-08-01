@@ -25,6 +25,7 @@ DISTFILES += qml/harbour-nextcloud-cookbook.qml \
     qml/cover/CoverPage.qml \
     qml/pages/CategoriesPage.qml \
     qml/pages/CheckPage.qml \
+    qml/pages/ImportRecipePage.qml \
     qml/pages/LoginPage.qml \
     qml/pages/MainPage.qml \
     qml/pages/TagsPage.qml \
