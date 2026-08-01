@@ -164,11 +164,11 @@ ListItem {
                 onClicked: listItem.remove()
             }
 
-            MenuItem {
-                //% "Share"
-                text: qsTrId("recipe_item.share")
-                onClicked: listItem.shareRequested(recipe)
-            }
+//            MenuItem {
+//                //% "Share"
+//                text: qsTrId("recipe_item.share")
+//                onClicked: listItem.shareRequested(recipe)
+//            }
         }
     }
 

@@ -91,10 +91,6 @@
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
-    <message id="recipe_item.share">
-        <source>Share</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message id="categories.title">
         <source>Categories</source>
         <translation type="unfinished"></translation>

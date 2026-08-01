@@ -8,11 +8,6 @@
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
-    <message id="recipe_item.share">
-        <location filename="../qml/components/RecipeListItem.qml" line="169"/>
-        <source>Share</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message id="global.loading">
         <location filename="../qml/components/StandardDialog.qml" line="9"/>
         <location filename="../qml/components/StandardPage.qml" line="9"/>

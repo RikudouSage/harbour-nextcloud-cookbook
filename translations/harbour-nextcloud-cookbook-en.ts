@@ -189,11 +189,6 @@
         <source>Delete</source>
         <translation>Delete</translation>
     </message>
-    <message id="recipe_item.share">
-        <location filename="../qml/components/RecipeListItem.qml" line="169"/>
-        <source>Share</source>
-        <translation>Share</translation>
-    </message>
     <message id="tags.title">
         <location filename="../qml/pages/TagsPage.qml" line="12"/>
         <source>Tags</source>
