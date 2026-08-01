@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Icon=harbour-nextcloud-cookbook
+Exec=harbour-nextcloud-cookbook
+Name=harbour-nextcloud-cookbook
+
+[X-Sailjail]
+OrganizationName=cz.chrastecky
+ApplicationName=nextcloud-cookbook
+Permissions=Internet;Secrets
