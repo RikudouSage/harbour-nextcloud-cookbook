@@ -1,19 +1,15 @@
-# NOTICE:
-#
-# Application name defined in TARGET has a corresponding QML filename.
-# If name defined in TARGET is changed, the following needs to be done
-# to match new name:
-#   - corresponding QML filename must be changed
-#   - desktop icon filename must be changed
-#   - desktop filename must be changed
-#   - icon definition filename in desktop file must be changed
-#   - translation filenames have to be changed
-
-# The name of your application
 TARGET = harbour-nextcloud-cookbook
-
 CONFIG += sailfishapp c++20
 PKGCONFIG += sailfishsecrets sailfishcrypto
+QT += concurrent
+
+GO_LIBDIR = /usr/share/$$TARGET/lib
+INCLUDEPATH += $$PWD/core
+LIBS += -L$$PWD/core -lcookbook
+QMAKE_RPATHDIR += $$GO_LIBDIR
+libcookbook.path = $$GO_LIBDIR
+libcookbook.files = $$PWD/core/libcookbook.so
+INSTALLS += libcookbook
 
 SOURCES += src/harbour-nextcloud-cookbook.cpp \
     src/core.cpp \
@@ -47,5 +43,6 @@ TRANSLATIONS += translations/harbour-nextcloud-cookbook-en.ts \
                 translations/harbour-nextcloud-cookbook-cs.ts
 
 HEADERS += \
+    core/libcookbook.h \
     src/core.h \
     src/secrets.h

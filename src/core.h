@@ -4,6 +4,7 @@
 #include <QObject>
 
 #include "secrets.h"
+#include "libcookbook.h"
 
 class Core : public QObject
 {
