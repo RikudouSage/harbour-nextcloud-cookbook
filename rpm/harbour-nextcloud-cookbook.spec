@@ -1,10 +1,10 @@
 Name:       harbour-nextcloud-cookbook
 
 Summary:    Cookbook
-Version:    0.1.0
+Version:    1.0.0
 Release:    1
-License:    LICENSE
-URL:        http://example.org/
+License:    MIT
+URL:        https://github.com/RikudouSage/harbour-nextcloud-cookbook
 Source0:    %{name}-%{version}.tar.bz2
 
 %global __provides_exclude_from ^%{_datadir}/%{name}/lib/.*$
