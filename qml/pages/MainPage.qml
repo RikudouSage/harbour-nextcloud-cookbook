@@ -8,6 +8,7 @@ StandardPage {
     property string scopeTitle: qsTrId("main.title")
     property var recipes: []
     property string errorText
+    property bool searchLoading: false
 
     id: page
     title: scopeTitle
@@ -18,10 +19,16 @@ StandardPage {
         //% "Loading recipes..."
         loadText = qsTrId("main.loading_recipes");
 
+        core.listRecipes();
+    }
+
+    function searchRecipes() {
+        errorText = "";
         if (search.text.length > 0) {
+            searchLoading = true;
             core.searchRecipes(search.text);
         } else {
-            core.listRecipes();
+            refresh();
         }
     }
 
@@ -38,6 +45,7 @@ StandardPage {
 
         onRecipesResolved: {
             loading = false;
+            searchLoading = false;
             if (!success) {
                 //% "Could not load recipes. Pull down to refresh."
                 errorText = qsTrId("main.recipes_error");
@@ -50,6 +58,7 @@ StandardPage {
         onRecipeImported: {
             if (!success) {
                 loading = false;
+                searchLoading = false;
                 //% "Could not import recipe."
                 errorText = qsTrId("main.import_error");
                 return;
@@ -114,16 +123,24 @@ StandardPage {
         visible: text.length > 0
     }
 
+    BusyLabel {
+        //% "Loading recipes..."
+        text: qsTrId("main.loading_recipes")
+        running: searchLoading
+        height: running ? implicitHeight : 0
+        visible: running
+    }
+
     StandardLabel {
         //% "No recipes"
         text: qsTrId("main.empty")
         color: Theme.secondaryColor
-        visible: !errorText && recipes.length === 0
+        visible: !searchLoading && !errorText && recipes.length === 0
         horizontalAlignment: Text.AlignHCenter
     }
 
     Repeater {
-        model: recipes
+        model: searchLoading ? [] : recipes
 
         RecipeListItem {
             width: page.width
@@ -143,7 +160,7 @@ StandardPage {
         id: refreshTimer
         interval: 300
         repeat: false
-        onTriggered: refresh()
+        onTriggered: searchRecipes()
     }
 
     Component.onCompleted: {
