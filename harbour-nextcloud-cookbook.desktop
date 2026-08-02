@@ -8,4 +8,4 @@ Name=Cookbook
 [X-Sailjail]
 OrganizationName=cz.chrastecky
 ApplicationName=cookbook
-Permissions=Internet;Secrets
+Permissions=Internet;Secrets;Sensors
