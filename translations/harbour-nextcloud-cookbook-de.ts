@@ -277,7 +277,7 @@
     <message id="recipe_detail.total_time">
         <location filename="../qml/pages/RecipeDetailPage.qml" line="157"/>
         <source>Total time</source>
-        <translation>Zeit insgesamt</translation>
+        <translation>Insgesamt</translation>
     </message>
     <message id="recipe_detail.created">
         <location filename="../qml/pages/RecipeDetailPage.qml" line="166"/>
