@@ -17,7 +17,6 @@ BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
-BuildRequires:  pkgconfig(Qt5Sensors)
 BuildRequires:  pkgconfig(sailfishsecrets)
 BuildRequires:  pkgconfig(sailfishcrypto)
 BuildRequires:  desktop-file-utils

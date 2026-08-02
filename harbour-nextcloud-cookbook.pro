@@ -1,7 +1,7 @@
 TARGET = harbour-nextcloud-cookbook
 CONFIG += sailfishapp c++20
 PKGCONFIG += sailfishsecrets sailfishcrypto
-QT += concurrent gui sensors
+QT += concurrent gui
 
 GO_LIBDIR = /usr/share/$$TARGET/lib
 INCLUDEPATH += $$PWD/core
@@ -18,7 +18,6 @@ SOURCES += src/harbour-nextcloud-cookbook.cpp \
 DISTFILES += qml/harbour-nextcloud-cookbook.qml \
     qml/components/SafePage.qml \
     qml/components/RecipeListItem.qml \
-    qml/components/ShakeDetector.qml \
     qml/components/StandardDialog.qml \
     qml/components/StandardLabel.qml \
     qml/components/StandardPage.qml \
