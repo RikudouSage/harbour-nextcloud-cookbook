@@ -99,18 +99,28 @@
         <source>Log In</source>
         <translation>Přihlásit se</translation>
     </message>
+    <message id="global.request_debug.disable">
+        <location filename="../qml/pages/LoginPage.qml" line="25"/>
+        <source>Disable debugging</source>
+        <translation>Vypnout debug</translation>
+    </message>
+    <message id="global.request_debug.enable">
+        <location filename="../qml/pages/LoginPage.qml" line="27"/>
+        <source>Enable debugging</source>
+        <translation>Zapnout debug</translation>
+    </message>
     <message id="login.nextcloud_url">
-        <location filename="../qml/pages/LoginPage.qml" line="30"/>
+        <location filename="../qml/pages/LoginPage.qml" line="43"/>
         <source>Nextcloud URL</source>
         <translation>Nextcloud URL</translation>
     </message>
     <message id="login.username">
-        <location filename="../qml/pages/LoginPage.qml" line="40"/>
+        <location filename="../qml/pages/LoginPage.qml" line="53"/>
         <source>Username</source>
         <translation>Uživatelské jméno</translation>
     </message>
     <message id="login.password">
-        <location filename="../qml/pages/LoginPage.qml" line="51"/>
+        <location filename="../qml/pages/LoginPage.qml" line="64"/>
         <source>Password</source>
         <translation>Heslo</translation>
     </message>

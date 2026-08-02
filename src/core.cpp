@@ -94,6 +94,10 @@ void Core::validateCredentials(const QString &url, const QString &username, cons
             return;
         }
 
+        if (!getLastError().isEmpty()) {
+            qWarning() << "Error reported while validating credentials: " << getLastError();
+        }
+
         close();
         emit credentialsValidated(success, url, username, password);
     });
@@ -396,6 +400,26 @@ void Core::resolveRecipeImage(const QString &id)
 void Core::invalidateRecipeImage(const QString &id)
 {
     removeCachedRecipeImages(id);
+}
+
+bool Core::requestDebugEnabled()
+{
+    return qgetenv("REQUEST_DEBUG") == "true";
+}
+
+void Core::setRequestDebugEnabled(bool enabled)
+{
+    if (enabled == requestDebugEnabled()) {
+        return;
+    }
+
+    if (CookbookSetDebug(enabled) != CookbookSuccess) {
+        qWarning() << "Failed setting debug: " << getLastError();
+        return;
+    }
+
+    qputenv("REQUEST_DEBUG", enabled ? "true" : "false");
+    emit requestDebugEnabledChanged();
 }
 
 void Core::reinitialize()

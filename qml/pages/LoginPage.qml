@@ -18,6 +18,19 @@ StandardDialog {
 
     canAccept: username && password && nextcloudUrl
 
+    PushUpMenu {
+        MenuItem {
+            text: core.requestDebugEnabled
+                      //% "Disable debugging"
+                      ? qsTrId("global.request_debug.disable")
+                      //% "Enable debugging"
+                      : qsTrId("global.request_debug.enable")
+            onClicked: {
+                core.requestDebugEnabled = !core.requestDebugEnabled;
+            }
+        }
+    }
+
     StandardLabel {
         id: errorTextLabel
         color: Theme.errorColor

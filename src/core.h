@@ -14,6 +14,7 @@ class Core : public QObject
     Q_OBJECT
 public:
     explicit Core(Secrets *secrets, QObject *parent = nullptr);
+    Q_PROPERTY(bool requestDebugEnabled READ requestDebugEnabled WRITE setRequestDebugEnabled NOTIFY requestDebugEnabledChanged)
 
 public:
     Q_INVOKABLE void validateCredentials(const QString &url, const QString &username, const QString &password);
@@ -35,6 +36,9 @@ public:
     Q_INVOKABLE void resolveRecipeImage(const QString &id);
     Q_INVOKABLE void invalidateRecipeImage(const QString &id);
 
+    bool requestDebugEnabled();
+    void setRequestDebugEnabled(bool enabled);
+
 signals:
     void credentialsValidated(bool success);
     void credentialsValidated(bool success, const QString &url, const QString &username, const QString &password);
@@ -47,6 +51,7 @@ signals:
     void recipeImported(bool success, const QJsonObject &recipe);
     void recipeDeleted(bool success);
     void recipeImageResolved(bool success, const QString &id, const QString &path);
+    void requestDebugEnabledChanged();
 
 private:
     Secrets *secrets;

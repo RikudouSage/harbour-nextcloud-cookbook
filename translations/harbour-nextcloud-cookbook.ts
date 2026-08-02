@@ -277,5 +277,13 @@
         <source>Keep screen on</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="global.request_debug.disable">
+        <source>Disable debugging</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="global.request_debug.enable">
+        <source>Enable debugging</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
