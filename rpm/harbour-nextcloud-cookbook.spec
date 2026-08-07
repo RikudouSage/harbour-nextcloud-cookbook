@@ -1,7 +1,7 @@
 Name:       harbour-nextcloud-cookbook
 
 Summary:    Cookbook
-Version:    1.0.6
+Version:    1.0.7
 Release:    1
 License:    MIT
 URL:        https://github.com/RikudouSage/harbour-nextcloud-cookbook
