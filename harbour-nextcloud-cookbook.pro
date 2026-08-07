@@ -53,7 +53,8 @@ CONFIG += sailfishapp_i18n sailfishapp_i18n_idbased
 TRANSLATIONS += translations/harbour-nextcloud-cookbook-en.ts \
                 translations/harbour-nextcloud-cookbook-de.ts \
                 translations/harbour-nextcloud-cookbook-cs.ts \
-                translations/harbour-nextcloud-cookbook-sv.ts
+                translations/harbour-nextcloud-cookbook-sv.ts \
+                translations/harbour-nextcloud-cookbook-it.ts
 
 HEADERS += \
     core/libcookbook.h \
